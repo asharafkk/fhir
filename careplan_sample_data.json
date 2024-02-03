@@ -1,0 +1,139 @@
+{
+  "resourceType": "CarePlan",
+  "id": "example-careplan",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2024-02-03T12:30:00Z"
+  },
+  "implicitRules": "http://example.com/rules",
+  "language": "en",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">A sample CarePlan instance</div>"
+  },
+  "contained": [
+    {
+      "resourceType": "Patient",
+      "id": "example-patient",
+      "name": [
+        {
+          "given": ["John"],
+          "family": "Doe"
+        }
+      ]
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://example.com/extensions/careplan-category",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://example.com/system",
+            "code": "home-health"
+          }
+        ],
+        "text": "Home Health"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "http://example.com/system",
+      "value": "12345"
+    }
+  ],
+  "status": "active",
+  "intent": "proposal",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://example.com/system",
+          "code": "psychiatric",
+          "display": "Psychiatric"
+        }
+      ]
+    }
+  ],
+  "title": "Example CarePlan",
+  "description": "A sample care plan for demonstration purposes.",
+  "subject": {
+    "reference": "Patient/example-patient"
+  },
+  "encounter": {
+    "reference": "Encounter/example-encounter"
+  },
+  "period": {
+    "start": "2024-02-03T12:00:00Z",
+    "end": "2024-02-10T12:00:00Z"
+  },
+  "created": "2024-02-03T12:30:00Z",
+  "custodian": {
+    "reference": "Organization/example-organization"
+  },
+  "contributor": [
+    {
+      "reference": "Practitioner/example-practitioner"
+    }
+  ],
+  "careTeam": [
+    {
+      "reference": "CareTeam/example-careteam"
+    }
+  ],
+  "addresses": [
+    {
+      "reference": "Condition/example-condition"
+    }
+  ],
+  "supportingInfo": [
+    {
+      "reference": "Observation/example-observation"
+    }
+  ],
+  "goal": [
+    {
+      "reference": "Goal/example-goal"
+    }
+  ],
+  "activity": [
+    {
+      "id": "example-activity-1",
+      "performedActivity": [
+        {
+          "reference": "Procedure/example-procedure"
+        }
+      ],
+      "progress": [
+        {
+          "text": "Patient completed the procedure successfully."
+        }
+      ],
+      "plannedActivityReference": {
+        "reference": "Procedure/example-planned-procedure"
+      }
+    },
+    {
+      "id": "example-activity-2",
+      "performedActivity": [
+        {
+          "reference": "Medication/example-medication"
+        }
+      ],
+      "progress": [
+        {
+          "text": "Patient took the medication as prescribed."
+        }
+      ],
+      "plannedActivityReference": {
+        "reference": "MedicationRequest/example-medicationrequest"
+      }
+    }
+  ],
+  "note": [
+    {
+      "text": "This is a sample note for the care plan."
+    }
+  ]
+}
