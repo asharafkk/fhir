@@ -1,0 +1,171 @@
+{
+  "resourceType": "CarePlan",
+  "id": "example-careplan-1",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2024-02-03T12:00:00Z"
+  },
+  "implicitRules": "http://example.com/rules",
+  "language": "en",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">A sample CarePlan resource</div>"
+  },
+  "contained": [
+    {
+      "resourceType": "Patient",
+      "id": "example-patient-1",
+      "name": [
+        {
+          "family": "Doe",
+          "given": ["John"]
+        }
+      ],
+      "gender": "male",
+      "birthDate": "1980-01-01"
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://example.com/extensions/careplan-category",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/care-plan-category",
+            "code": "patient-education"
+          }
+        ],
+        "text": "Patient Education"
+      }
+    }
+  ],
+  "modifierExtension": [
+    {
+      "url": "http://example.com/extensions/careplan-note",
+      "valueAnnotation": {
+        "text": "This care plan is for educational purposes."
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "http://example.com/careplan-ids",
+      "value": "CP123456"
+    }
+  ],
+  "instantiatesCanonical": [
+    "http://example.com/protocol/123"
+  ],
+  "status": "active",
+  "intent": "plan",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/care-plan-category",
+          "code": "patient-education"
+        }
+      ],
+      "text": "Patient Education"
+    }
+  ],
+  "title": "Patient Education Plan",
+  "description": "A care plan for educating the patient",
+  "subject": {
+    "reference": "Patient/example-patient-1"
+  },
+  "encounter": {
+    "reference": "Encounter/example-encounter-1"
+  },
+  "period": {
+    "start": "2024-02-03T12:00:00Z",
+    "end": "2024-03-03T12:00:00Z"
+  },
+  "created": "2024-02-03T10:00:00Z",
+  "author": {
+    "reference": "Practitioner/example-practitioner-1"
+  },
+  "contributor": [
+    {
+      "reference": "Organization/example-org-1"
+    }
+  ],
+  "careTeam": [
+    {
+      "reference": "CareTeam/example-careteam-1"
+    }
+  ],
+  "addresses": [
+    {
+      "reference": "Condition/example-condition-1"
+    }
+  ],
+  "supportingInfo": [
+    {
+      "reference": "Observation/example-observation-1"
+    }
+  ],
+  "goal": [
+    {
+      "reference": "Goal/example-goal-1"
+    }
+  ],
+  "activity": [
+    {
+      "outcomeCodeableConcept": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386661006"
+            }
+          ],
+          "text": "Patient understands care instructions"
+        }
+      ],
+      "progress": [
+        {
+          "text": "Patient attended educational session"
+        }
+      ],
+      "reference": {
+        "reference": "Procedure/example-procedure-1"
+      },
+      "detail": {
+        "kind": "ServiceRequest",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2"
+            }
+          ],
+          "text": "Education about managing diabetes"
+        },
+        "status": "not-started",
+        "doNotPerform": false,
+        "description": "Educate the patient about managing diabetes",
+        "scheduledTiming": {
+          "repeat": {
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "d"
+          }
+        },
+        "location": {
+          "reference": "Location/example-location-1"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/example-practitioner-2"
+          }
+        ]
+      }
+    }
+  ],
+  "note": [
+    {
+      "text": "This is a sample CarePlan for patient education."
+    }
+  ]
+}
